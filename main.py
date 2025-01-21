@@ -34,10 +34,11 @@ def win_creation():
     frame_score.pack()
 
 
-    score_x = tk.Label(frame_score, text = "X: 0", width=10, height=2, font = ("Arial", 10))
+    score_x = tk.Label(frame_score, text = "X   0", width=10, height=2, font = ("Arial", 10))
     score_x.grid(row = 0, column = 0)
 
-    score_o = tk.Label(frame_score, text = "O: 0", width=10, height=2, font = ("Arial", 10))
+    score_o = tk.Label(frame_score, text = score, width=10, height=2, font = ("Arial", 10))
+    score_o.grid(row=1, column=0)
 
     #create new game button
     new_game_but = tk.Button(game_win, text = "New Game", width=20, height=2, font = ("Arial", 10),
@@ -50,10 +51,12 @@ def new_game():
 
 
 def button_click(row, col):
-    pass
+    global button_text
+    buttons[row][col]["text"] = button_text
+    button_text = "O" if button_text == "X" else "X"
 
 def score_text():
-    pass
+    return "O   0"
 
 win_creation()
 
