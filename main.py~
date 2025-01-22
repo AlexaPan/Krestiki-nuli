@@ -1,11 +1,9 @@
 import tkinter as tk
-from math import trunc
-from pickle import GLOBAL
 from tkinter import messagebox
 
 game_win = tk.Tk()
 game_win.title("The Game 'Krestiki'")
-game_win.geometry("400x150")
+game_win.geometry("400x180")
 game_win.resizable(False, False)
 game_win.configure(background="gray")
 
@@ -21,7 +19,7 @@ def win_creation():
 
     frame_score = tk.Frame(game_win)
     frame_score.configure(borderwidth=1, relief="solid")
-    frame_score.pack(side=tk.LEFT, pady=10)
+    frame_score.pack(side=tk.LEFT, padx=10, pady=10)
 
     score_board = tk.Label(frame_score, text="Scoreboard", width=10, height=1, relief="solid", font=("Arial", 10))
     score_board.grid(row=0, column=0, padx=5, pady=5)
